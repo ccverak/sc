@@ -1,0 +1,2380 @@
+shift/reduce conflict in state 87 resolved as shift.
+shift/reduce conflict in state 87 resolved as shift.
+shift/reduce conflict in state 89 resolved as shift.
+shift/reduce conflict in state 89 resolved as shift.
+
+
+Unused terminals:
+
+   COMENT
+   NE
+
+Grammar
+
+Rule 1     Program -> ListSent
+Rule 2     ListSent -> Sent
+Rule 3     ListSent -> ListSent Sent
+Rule 4     Sent -> SentAsig
+Rule 5     Sent -> SentIf
+Rule 6     Sent -> SentWhile
+Rule 7     Sent -> SentFor
+Rule 8     Sent -> READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+Rule 9     Sent -> WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+Rule 10    ParteDir -> IDENT
+Rule 11    SentAsig -> ParteDir ASIG Expresion PUNTO_Y_COMA
+Rule 12    SentAsig2 -> ParteDir ASIG Expresion
+Rule 13    SentIf -> ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+Rule 14    SentIf -> ParteIf SentVIf2
+Rule 15    ParteIf -> IF PAR_AB Cond PAR_CERR LLAVE_AB
+Rule 16    SentVIf -> ListSent LLAVE_CERR
+Rule 17    SentVIf2 -> ListSent LLAVE_CERR
+Rule 18    SentVElse -> ListSent
+Rule 19    SentFor -> ParteIniFor ParteSentIncF LSentFor LLAVE_CERR
+Rule 20    ParteIniFor -> SeccionIni Cond PUNTO_Y_COMA
+Rule 21    SeccionIni -> FOR PAR_AB SentAsig2 PUNTO_Y_COMA
+Rule 22    ParteSentIncF -> SentAsig2 PAR_CERR LLAVE_AB
+Rule 23    LSentFor -> ListSent
+Rule 24    SentWhile -> ParteWhile ParteSentW LLAVE_CERR
+Rule 25    ParteWhile -> WhileParAb Cond PAR_CERR LLAVE_AB
+Rule 26    WhileParAb -> WHILE PAR_AB
+Rule 27    ParteSentW -> ListSent
+Rule 28    Expresion -> Expresion SU Expresion
+Rule 29    Expresion -> Expresion RE Expresion
+Rule 30    Expresion -> Expresion MULT Expresion
+Rule 31    Expresion -> Expresion DIV Expresion
+Rule 32    Expresion -> Expresion MOD Expresion
+Rule 33    Expresion -> IDENT
+Rule 34    Expresion -> Constante
+Rule 35    Expresion -> PAR_AB Expresion PAR_CERR
+Rule 36    Expresion -> RE Expresion
+Rule 37    Cond -> Expresion MENOR_IGUAL Expresion
+Rule 38    Cond -> Expresion MENOR_QUE Expresion
+Rule 39    Cond -> Expresion MAYOR_IGUAL Expresion
+Rule 40    Cond -> Expresion MAYOR_QUE Expresion
+Rule 41    Cond -> Expresion IGUAL_IGUAL Expresion
+Rule 42    Cond -> Expresion DISTINTO Expresion
+Rule 43    Cond -> Expresion
+Rule 44    Cond -> Cond YLOG Cond
+Rule 45    Cond -> Cond OLOG Cond
+Rule 46    Constante -> TBOOLEAN
+Rule 47    Constante -> FBOOLEAN
+Rule 48    Constante -> ENTERO
+Rule 49    Constante -> REAL
+
+Terminals, with rules where they appear
+
+ASIG                 : 11 12
+COMENT               : 
+DISTINTO             : 42
+DIV                  : 31
+ELSE                 : 13
+ENTERO               : 48
+FBOOLEAN             : 47
+FOR                  : 21
+IDENT                : 8 10 33
+IF                   : 15
+IGUAL_IGUAL          : 41
+LLAVE_AB             : 13 15 22 25
+LLAVE_CERR           : 13 16 17 19 24
+MAYOR_IGUAL          : 39
+MAYOR_QUE            : 40
+MENOR_IGUAL          : 37
+MENOR_QUE            : 38
+MOD                  : 32
+MULT                 : 30
+NE                   : 
+OLOG                 : 45
+PAR_AB               : 8 9 15 21 26 35
+PAR_CERR             : 8 9 15 22 25 35
+PUNTO_Y_COMA         : 8 9 11 20 21
+RE                   : 29 36
+READ                 : 8
+REAL                 : 49
+SU                   : 28
+TBOOLEAN             : 46
+WHILE                : 26
+WRITE                : 9
+YLOG                 : 44
+error                : 
+
+Nonterminals, with rules where they appear
+
+Cond                 : 15 20 25 44 44 45 45
+Constante            : 34
+Expresion            : 9 11 12 28 28 29 29 30 30 31 31 32 32 35 36 37 37 38 38 39 39 40 40 41 41 42 42 43
+LSentFor             : 19
+ListSent             : 1 3 16 17 18 23 27
+ParteDir             : 11 12
+ParteIf              : 13 14
+ParteIniFor          : 19
+ParteSentIncF        : 19
+ParteSentW           : 24
+ParteWhile           : 24
+Program              : 0
+SeccionIni           : 20
+Sent                 : 2 3
+SentAsig             : 4
+SentAsig2            : 21 22
+SentFor              : 7
+SentIf               : 5
+SentVElse            : 13
+SentVIf              : 13
+SentVIf2             : 14
+SentWhile            : 6
+WhileParAb           : 25
+
+
+Parsing method: LALR
+
+
+state 0
+
+    (0) S' -> . Program
+    (1) Program -> . ListSent
+    (2) ListSent -> . Sent
+    (3) ListSent -> . ListSent Sent
+    (4) Sent -> . SentAsig
+    (5) Sent -> . SentIf
+    (6) Sent -> . SentWhile
+    (7) Sent -> . SentFor
+    (8) Sent -> . READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+    (9) Sent -> . WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+    (11) SentAsig -> . ParteDir ASIG Expresion PUNTO_Y_COMA
+    (13) SentIf -> . ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+    (14) SentIf -> . ParteIf SentVIf2
+    (24) SentWhile -> . ParteWhile ParteSentW LLAVE_CERR
+    (19) SentFor -> . ParteIniFor ParteSentIncF LSentFor LLAVE_CERR
+    (10) ParteDir -> . IDENT
+    (15) ParteIf -> . IF PAR_AB Cond PAR_CERR LLAVE_AB
+    (25) ParteWhile -> . WhileParAb Cond PAR_CERR LLAVE_AB
+    (20) ParteIniFor -> . SeccionIni Cond PUNTO_Y_COMA
+    (26) WhileParAb -> . WHILE PAR_AB
+    (21) SeccionIni -> . FOR PAR_AB SentAsig2 PUNTO_Y_COMA
+
+    READ            shift and go to state 2
+    WRITE           shift and go to state 14
+    IDENT           shift and go to state 11
+    IF              shift and go to state 17
+    WHILE           shift and go to state 3
+    FOR             shift and go to state 12
+
+
+    WhileParAb                     shift and go to state 1
+    Sent                           shift and go to state 6
+    SentWhile                      shift and go to state 7
+    ParteIniFor                    shift and go to state 8
+    SentIf                         shift and go to state 9
+    SentAsig                       shift and go to state 10
+    SeccionIni                     shift and go to state 13
+    ParteDir                       shift and go to state 15
+    ListSent                       shift and go to state 5
+    ParteWhile                     shift and go to state 16
+    SentFor                        shift and go to state 18
+    Program                        shift and go to state 4
+    ParteIf                        shift and go to state 19
+
+state 1
+
+    (25) ParteWhile -> WhileParAb . Cond PAR_CERR LLAVE_AB
+    (37) Cond -> . Expresion MENOR_IGUAL Expresion
+    (38) Cond -> . Expresion MENOR_QUE Expresion
+    (39) Cond -> . Expresion MAYOR_IGUAL Expresion
+    (40) Cond -> . Expresion MAYOR_QUE Expresion
+    (41) Cond -> . Expresion IGUAL_IGUAL Expresion
+    (42) Cond -> . Expresion DISTINTO Expresion
+    (43) Cond -> . Expresion
+    (44) Cond -> . Cond YLOG Cond
+    (45) Cond -> . Cond OLOG Cond
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 27
+    Constante                      shift and go to state 22
+    Cond                           shift and go to state 29
+
+state 2
+
+    (8) Sent -> READ . PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+
+    PAR_AB          shift and go to state 30
+
+
+
+state 3
+
+    (26) WhileParAb -> WHILE . PAR_AB
+
+    PAR_AB          shift and go to state 31
+
+
+
+state 4
+
+    (0) S' -> Program .
+
+
+
+
+state 5
+
+    (1) Program -> ListSent .
+    (3) ListSent -> ListSent . Sent
+    (4) Sent -> . SentAsig
+    (5) Sent -> . SentIf
+    (6) Sent -> . SentWhile
+    (7) Sent -> . SentFor
+    (8) Sent -> . READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+    (9) Sent -> . WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+    (11) SentAsig -> . ParteDir ASIG Expresion PUNTO_Y_COMA
+    (13) SentIf -> . ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+    (14) SentIf -> . ParteIf SentVIf2
+    (24) SentWhile -> . ParteWhile ParteSentW LLAVE_CERR
+    (19) SentFor -> . ParteIniFor ParteSentIncF LSentFor LLAVE_CERR
+    (10) ParteDir -> . IDENT
+    (15) ParteIf -> . IF PAR_AB Cond PAR_CERR LLAVE_AB
+    (25) ParteWhile -> . WhileParAb Cond PAR_CERR LLAVE_AB
+    (20) ParteIniFor -> . SeccionIni Cond PUNTO_Y_COMA
+    (26) WhileParAb -> . WHILE PAR_AB
+    (21) SeccionIni -> . FOR PAR_AB SentAsig2 PUNTO_Y_COMA
+
+    $end            reduce using rule 1 (Program -> ListSent .)
+    READ            shift and go to state 2
+    WRITE           shift and go to state 14
+    IDENT           shift and go to state 11
+    IF              shift and go to state 17
+    WHILE           shift and go to state 3
+    FOR             shift and go to state 12
+
+
+    ParteIniFor                    shift and go to state 8
+    WhileParAb                     shift and go to state 1
+    SeccionIni                     shift and go to state 13
+    SentWhile                      shift and go to state 7
+    ParteWhile                     shift and go to state 16
+    SentFor                        shift and go to state 18
+    SentIf                         shift and go to state 9
+    SentAsig                       shift and go to state 10
+    ParteIf                        shift and go to state 19
+    Sent                           shift and go to state 32
+    ParteDir                       shift and go to state 15
+
+state 6
+
+    (2) ListSent -> Sent .
+
+    READ            reduce using rule 2 (ListSent -> Sent .)
+    WRITE           reduce using rule 2 (ListSent -> Sent .)
+    IDENT           reduce using rule 2 (ListSent -> Sent .)
+    IF              reduce using rule 2 (ListSent -> Sent .)
+    WHILE           reduce using rule 2 (ListSent -> Sent .)
+    FOR             reduce using rule 2 (ListSent -> Sent .)
+    LLAVE_CERR      reduce using rule 2 (ListSent -> Sent .)
+    $end            reduce using rule 2 (ListSent -> Sent .)
+
+
+
+state 7
+
+    (6) Sent -> SentWhile .
+
+    READ            reduce using rule 6 (Sent -> SentWhile .)
+    WRITE           reduce using rule 6 (Sent -> SentWhile .)
+    IDENT           reduce using rule 6 (Sent -> SentWhile .)
+    IF              reduce using rule 6 (Sent -> SentWhile .)
+    WHILE           reduce using rule 6 (Sent -> SentWhile .)
+    FOR             reduce using rule 6 (Sent -> SentWhile .)
+    LLAVE_CERR      reduce using rule 6 (Sent -> SentWhile .)
+    $end            reduce using rule 6 (Sent -> SentWhile .)
+
+
+
+state 8
+
+    (19) SentFor -> ParteIniFor . ParteSentIncF LSentFor LLAVE_CERR
+    (22) ParteSentIncF -> . SentAsig2 PAR_CERR LLAVE_AB
+    (12) SentAsig2 -> . ParteDir ASIG Expresion
+    (10) ParteDir -> . IDENT
+
+    IDENT           shift and go to state 11
+
+
+    SentAsig2                      shift and go to state 33
+    ParteDir                       shift and go to state 34
+    ParteSentIncF                  shift and go to state 35
+
+state 9
+
+    (5) Sent -> SentIf .
+
+    READ            reduce using rule 5 (Sent -> SentIf .)
+    WRITE           reduce using rule 5 (Sent -> SentIf .)
+    IDENT           reduce using rule 5 (Sent -> SentIf .)
+    IF              reduce using rule 5 (Sent -> SentIf .)
+    WHILE           reduce using rule 5 (Sent -> SentIf .)
+    FOR             reduce using rule 5 (Sent -> SentIf .)
+    LLAVE_CERR      reduce using rule 5 (Sent -> SentIf .)
+    $end            reduce using rule 5 (Sent -> SentIf .)
+
+
+
+state 10
+
+    (4) Sent -> SentAsig .
+
+    READ            reduce using rule 4 (Sent -> SentAsig .)
+    WRITE           reduce using rule 4 (Sent -> SentAsig .)
+    IDENT           reduce using rule 4 (Sent -> SentAsig .)
+    IF              reduce using rule 4 (Sent -> SentAsig .)
+    WHILE           reduce using rule 4 (Sent -> SentAsig .)
+    FOR             reduce using rule 4 (Sent -> SentAsig .)
+    LLAVE_CERR      reduce using rule 4 (Sent -> SentAsig .)
+    $end            reduce using rule 4 (Sent -> SentAsig .)
+
+
+
+state 11
+
+    (10) ParteDir -> IDENT .
+
+    ASIG            reduce using rule 10 (ParteDir -> IDENT .)
+
+
+
+state 12
+
+    (21) SeccionIni -> FOR . PAR_AB SentAsig2 PUNTO_Y_COMA
+
+    PAR_AB          shift and go to state 36
+
+
+
+state 13
+
+    (20) ParteIniFor -> SeccionIni . Cond PUNTO_Y_COMA
+    (37) Cond -> . Expresion MENOR_IGUAL Expresion
+    (38) Cond -> . Expresion MENOR_QUE Expresion
+    (39) Cond -> . Expresion MAYOR_IGUAL Expresion
+    (40) Cond -> . Expresion MAYOR_QUE Expresion
+    (41) Cond -> . Expresion IGUAL_IGUAL Expresion
+    (42) Cond -> . Expresion DISTINTO Expresion
+    (43) Cond -> . Expresion
+    (44) Cond -> . Cond YLOG Cond
+    (45) Cond -> . Cond OLOG Cond
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 27
+    Constante                      shift and go to state 22
+    Cond                           shift and go to state 37
+
+state 14
+
+    (9) Sent -> WRITE . PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+
+    PAR_AB          shift and go to state 38
+
+
+
+state 15
+
+    (11) SentAsig -> ParteDir . ASIG Expresion PUNTO_Y_COMA
+
+    ASIG            shift and go to state 39
+
+
+
+state 16
+
+    (24) SentWhile -> ParteWhile . ParteSentW LLAVE_CERR
+    (27) ParteSentW -> . ListSent
+    (2) ListSent -> . Sent
+    (3) ListSent -> . ListSent Sent
+    (4) Sent -> . SentAsig
+    (5) Sent -> . SentIf
+    (6) Sent -> . SentWhile
+    (7) Sent -> . SentFor
+    (8) Sent -> . READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+    (9) Sent -> . WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+    (11) SentAsig -> . ParteDir ASIG Expresion PUNTO_Y_COMA
+    (13) SentIf -> . ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+    (14) SentIf -> . ParteIf SentVIf2
+    (24) SentWhile -> . ParteWhile ParteSentW LLAVE_CERR
+    (19) SentFor -> . ParteIniFor ParteSentIncF LSentFor LLAVE_CERR
+    (10) ParteDir -> . IDENT
+    (15) ParteIf -> . IF PAR_AB Cond PAR_CERR LLAVE_AB
+    (25) ParteWhile -> . WhileParAb Cond PAR_CERR LLAVE_AB
+    (20) ParteIniFor -> . SeccionIni Cond PUNTO_Y_COMA
+    (26) WhileParAb -> . WHILE PAR_AB
+    (21) SeccionIni -> . FOR PAR_AB SentAsig2 PUNTO_Y_COMA
+
+    READ            shift and go to state 2
+    WRITE           shift and go to state 14
+    IDENT           shift and go to state 11
+    IF              shift and go to state 17
+    WHILE           shift and go to state 3
+    FOR             shift and go to state 12
+
+
+    ParteIniFor                    shift and go to state 8
+    WhileParAb                     shift and go to state 1
+    SeccionIni                     shift and go to state 13
+    SentWhile                      shift and go to state 7
+    ParteIf                        shift and go to state 19
+    SentFor                        shift and go to state 18
+    ParteSentW                     shift and go to state 40
+    SentIf                         shift and go to state 9
+    SentAsig                       shift and go to state 10
+    ListSent                       shift and go to state 41
+    ParteWhile                     shift and go to state 16
+    Sent                           shift and go to state 6
+    ParteDir                       shift and go to state 15
+
+state 17
+
+    (15) ParteIf -> IF . PAR_AB Cond PAR_CERR LLAVE_AB
+
+    PAR_AB          shift and go to state 42
+
+
+
+state 18
+
+    (7) Sent -> SentFor .
+
+    READ            reduce using rule 7 (Sent -> SentFor .)
+    WRITE           reduce using rule 7 (Sent -> SentFor .)
+    IDENT           reduce using rule 7 (Sent -> SentFor .)
+    IF              reduce using rule 7 (Sent -> SentFor .)
+    WHILE           reduce using rule 7 (Sent -> SentFor .)
+    FOR             reduce using rule 7 (Sent -> SentFor .)
+    LLAVE_CERR      reduce using rule 7 (Sent -> SentFor .)
+    $end            reduce using rule 7 (Sent -> SentFor .)
+
+
+
+state 19
+
+    (13) SentIf -> ParteIf . SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+    (14) SentIf -> ParteIf . SentVIf2
+    (16) SentVIf -> . ListSent LLAVE_CERR
+    (17) SentVIf2 -> . ListSent LLAVE_CERR
+    (2) ListSent -> . Sent
+    (3) ListSent -> . ListSent Sent
+    (4) Sent -> . SentAsig
+    (5) Sent -> . SentIf
+    (6) Sent -> . SentWhile
+    (7) Sent -> . SentFor
+    (8) Sent -> . READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+    (9) Sent -> . WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+    (11) SentAsig -> . ParteDir ASIG Expresion PUNTO_Y_COMA
+    (13) SentIf -> . ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+    (14) SentIf -> . ParteIf SentVIf2
+    (24) SentWhile -> . ParteWhile ParteSentW LLAVE_CERR
+    (19) SentFor -> . ParteIniFor ParteSentIncF LSentFor LLAVE_CERR
+    (10) ParteDir -> . IDENT
+    (15) ParteIf -> . IF PAR_AB Cond PAR_CERR LLAVE_AB
+    (25) ParteWhile -> . WhileParAb Cond PAR_CERR LLAVE_AB
+    (20) ParteIniFor -> . SeccionIni Cond PUNTO_Y_COMA
+    (26) WhileParAb -> . WHILE PAR_AB
+    (21) SeccionIni -> . FOR PAR_AB SentAsig2 PUNTO_Y_COMA
+
+    READ            shift and go to state 2
+    WRITE           shift and go to state 14
+    IDENT           shift and go to state 11
+    IF              shift and go to state 17
+    WHILE           shift and go to state 3
+    FOR             shift and go to state 12
+
+
+    ParteIniFor                    shift and go to state 8
+    SentVIf                        shift and go to state 44
+    WhileParAb                     shift and go to state 1
+    SeccionIni                     shift and go to state 13
+    SentWhile                      shift and go to state 7
+    ParteWhile                     shift and go to state 16
+    SentFor                        shift and go to state 18
+    SentVIf2                       shift and go to state 43
+    SentAsig                       shift and go to state 10
+    ParteDir                       shift and go to state 15
+    ParteIf                        shift and go to state 19
+    ListSent                       shift and go to state 45
+    Sent                           shift and go to state 6
+    SentIf                         shift and go to state 9
+
+state 20
+
+    (49) Constante -> REAL .
+
+    MENOR_IGUAL     reduce using rule 49 (Constante -> REAL .)
+    MENOR_QUE       reduce using rule 49 (Constante -> REAL .)
+    MAYOR_IGUAL     reduce using rule 49 (Constante -> REAL .)
+    MAYOR_QUE       reduce using rule 49 (Constante -> REAL .)
+    IGUAL_IGUAL     reduce using rule 49 (Constante -> REAL .)
+    DISTINTO        reduce using rule 49 (Constante -> REAL .)
+    SU              reduce using rule 49 (Constante -> REAL .)
+    RE              reduce using rule 49 (Constante -> REAL .)
+    MULT            reduce using rule 49 (Constante -> REAL .)
+    DIV             reduce using rule 49 (Constante -> REAL .)
+    MOD             reduce using rule 49 (Constante -> REAL .)
+    PAR_CERR        reduce using rule 49 (Constante -> REAL .)
+    YLOG            reduce using rule 49 (Constante -> REAL .)
+    OLOG            reduce using rule 49 (Constante -> REAL .)
+    PUNTO_Y_COMA    reduce using rule 49 (Constante -> REAL .)
+
+
+
+state 21
+
+    (47) Constante -> FBOOLEAN .
+
+    MENOR_IGUAL     reduce using rule 47 (Constante -> FBOOLEAN .)
+    MENOR_QUE       reduce using rule 47 (Constante -> FBOOLEAN .)
+    MAYOR_IGUAL     reduce using rule 47 (Constante -> FBOOLEAN .)
+    MAYOR_QUE       reduce using rule 47 (Constante -> FBOOLEAN .)
+    IGUAL_IGUAL     reduce using rule 47 (Constante -> FBOOLEAN .)
+    DISTINTO        reduce using rule 47 (Constante -> FBOOLEAN .)
+    SU              reduce using rule 47 (Constante -> FBOOLEAN .)
+    RE              reduce using rule 47 (Constante -> FBOOLEAN .)
+    MULT            reduce using rule 47 (Constante -> FBOOLEAN .)
+    DIV             reduce using rule 47 (Constante -> FBOOLEAN .)
+    MOD             reduce using rule 47 (Constante -> FBOOLEAN .)
+    PAR_CERR        reduce using rule 47 (Constante -> FBOOLEAN .)
+    YLOG            reduce using rule 47 (Constante -> FBOOLEAN .)
+    OLOG            reduce using rule 47 (Constante -> FBOOLEAN .)
+    PUNTO_Y_COMA    reduce using rule 47 (Constante -> FBOOLEAN .)
+
+
+
+state 22
+
+    (34) Expresion -> Constante .
+
+    SU              reduce using rule 34 (Expresion -> Constante .)
+    RE              reduce using rule 34 (Expresion -> Constante .)
+    MULT            reduce using rule 34 (Expresion -> Constante .)
+    DIV             reduce using rule 34 (Expresion -> Constante .)
+    MOD             reduce using rule 34 (Expresion -> Constante .)
+    MENOR_IGUAL     reduce using rule 34 (Expresion -> Constante .)
+    MENOR_QUE       reduce using rule 34 (Expresion -> Constante .)
+    MAYOR_IGUAL     reduce using rule 34 (Expresion -> Constante .)
+    MAYOR_QUE       reduce using rule 34 (Expresion -> Constante .)
+    IGUAL_IGUAL     reduce using rule 34 (Expresion -> Constante .)
+    DISTINTO        reduce using rule 34 (Expresion -> Constante .)
+    PAR_CERR        reduce using rule 34 (Expresion -> Constante .)
+    YLOG            reduce using rule 34 (Expresion -> Constante .)
+    OLOG            reduce using rule 34 (Expresion -> Constante .)
+    PUNTO_Y_COMA    reduce using rule 34 (Expresion -> Constante .)
+
+
+
+state 23
+
+    (46) Constante -> TBOOLEAN .
+
+    MENOR_IGUAL     reduce using rule 46 (Constante -> TBOOLEAN .)
+    MENOR_QUE       reduce using rule 46 (Constante -> TBOOLEAN .)
+    MAYOR_IGUAL     reduce using rule 46 (Constante -> TBOOLEAN .)
+    MAYOR_QUE       reduce using rule 46 (Constante -> TBOOLEAN .)
+    IGUAL_IGUAL     reduce using rule 46 (Constante -> TBOOLEAN .)
+    DISTINTO        reduce using rule 46 (Constante -> TBOOLEAN .)
+    SU              reduce using rule 46 (Constante -> TBOOLEAN .)
+    RE              reduce using rule 46 (Constante -> TBOOLEAN .)
+    MULT            reduce using rule 46 (Constante -> TBOOLEAN .)
+    DIV             reduce using rule 46 (Constante -> TBOOLEAN .)
+    MOD             reduce using rule 46 (Constante -> TBOOLEAN .)
+    PAR_CERR        reduce using rule 46 (Constante -> TBOOLEAN .)
+    YLOG            reduce using rule 46 (Constante -> TBOOLEAN .)
+    OLOG            reduce using rule 46 (Constante -> TBOOLEAN .)
+    PUNTO_Y_COMA    reduce using rule 46 (Constante -> TBOOLEAN .)
+
+
+
+state 24
+
+    (36) Expresion -> RE . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 46
+    Constante                      shift and go to state 22
+
+state 25
+
+    (35) Expresion -> PAR_AB . Expresion PAR_CERR
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 47
+    Constante                      shift and go to state 22
+
+state 26
+
+    (48) Constante -> ENTERO .
+
+    MENOR_IGUAL     reduce using rule 48 (Constante -> ENTERO .)
+    MENOR_QUE       reduce using rule 48 (Constante -> ENTERO .)
+    MAYOR_IGUAL     reduce using rule 48 (Constante -> ENTERO .)
+    MAYOR_QUE       reduce using rule 48 (Constante -> ENTERO .)
+    IGUAL_IGUAL     reduce using rule 48 (Constante -> ENTERO .)
+    DISTINTO        reduce using rule 48 (Constante -> ENTERO .)
+    SU              reduce using rule 48 (Constante -> ENTERO .)
+    RE              reduce using rule 48 (Constante -> ENTERO .)
+    MULT            reduce using rule 48 (Constante -> ENTERO .)
+    DIV             reduce using rule 48 (Constante -> ENTERO .)
+    MOD             reduce using rule 48 (Constante -> ENTERO .)
+    PAR_CERR        reduce using rule 48 (Constante -> ENTERO .)
+    YLOG            reduce using rule 48 (Constante -> ENTERO .)
+    OLOG            reduce using rule 48 (Constante -> ENTERO .)
+    PUNTO_Y_COMA    reduce using rule 48 (Constante -> ENTERO .)
+
+
+
+state 27
+
+    (37) Cond -> Expresion . MENOR_IGUAL Expresion
+    (38) Cond -> Expresion . MENOR_QUE Expresion
+    (39) Cond -> Expresion . MAYOR_IGUAL Expresion
+    (40) Cond -> Expresion . MAYOR_QUE Expresion
+    (41) Cond -> Expresion . IGUAL_IGUAL Expresion
+    (42) Cond -> Expresion . DISTINTO Expresion
+    (43) Cond -> Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    MENOR_IGUAL     shift and go to state 58
+    MENOR_QUE       shift and go to state 51
+    MAYOR_IGUAL     shift and go to state 54
+    MAYOR_QUE       shift and go to state 53
+    IGUAL_IGUAL     shift and go to state 52
+    DISTINTO        shift and go to state 48
+    PAR_CERR        reduce using rule 43 (Cond -> Expresion .)
+    YLOG            reduce using rule 43 (Cond -> Expresion .)
+    OLOG            reduce using rule 43 (Cond -> Expresion .)
+    PUNTO_Y_COMA    reduce using rule 43 (Cond -> Expresion .)
+    SU              shift and go to state 49
+    RE              shift and go to state 50
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+
+
+state 28
+
+    (33) Expresion -> IDENT .
+
+    SU              reduce using rule 33 (Expresion -> IDENT .)
+    RE              reduce using rule 33 (Expresion -> IDENT .)
+    MULT            reduce using rule 33 (Expresion -> IDENT .)
+    DIV             reduce using rule 33 (Expresion -> IDENT .)
+    MOD             reduce using rule 33 (Expresion -> IDENT .)
+    MENOR_IGUAL     reduce using rule 33 (Expresion -> IDENT .)
+    MENOR_QUE       reduce using rule 33 (Expresion -> IDENT .)
+    MAYOR_IGUAL     reduce using rule 33 (Expresion -> IDENT .)
+    MAYOR_QUE       reduce using rule 33 (Expresion -> IDENT .)
+    IGUAL_IGUAL     reduce using rule 33 (Expresion -> IDENT .)
+    DISTINTO        reduce using rule 33 (Expresion -> IDENT .)
+    PAR_CERR        reduce using rule 33 (Expresion -> IDENT .)
+    YLOG            reduce using rule 33 (Expresion -> IDENT .)
+    OLOG            reduce using rule 33 (Expresion -> IDENT .)
+    PUNTO_Y_COMA    reduce using rule 33 (Expresion -> IDENT .)
+
+
+
+state 29
+
+    (25) ParteWhile -> WhileParAb Cond . PAR_CERR LLAVE_AB
+    (44) Cond -> Cond . YLOG Cond
+    (45) Cond -> Cond . OLOG Cond
+
+    PAR_CERR        shift and go to state 60
+    YLOG            shift and go to state 61
+    OLOG            shift and go to state 59
+
+
+
+state 30
+
+    (8) Sent -> READ PAR_AB . IDENT PAR_CERR PUNTO_Y_COMA
+
+    IDENT           shift and go to state 62
+
+
+
+state 31
+
+    (26) WhileParAb -> WHILE PAR_AB .
+
+    IDENT           reduce using rule 26 (WhileParAb -> WHILE PAR_AB .)
+    PAR_AB          reduce using rule 26 (WhileParAb -> WHILE PAR_AB .)
+    RE              reduce using rule 26 (WhileParAb -> WHILE PAR_AB .)
+    TBOOLEAN        reduce using rule 26 (WhileParAb -> WHILE PAR_AB .)
+    FBOOLEAN        reduce using rule 26 (WhileParAb -> WHILE PAR_AB .)
+    ENTERO          reduce using rule 26 (WhileParAb -> WHILE PAR_AB .)
+    REAL            reduce using rule 26 (WhileParAb -> WHILE PAR_AB .)
+
+
+
+state 32
+
+    (3) ListSent -> ListSent Sent .
+
+    READ            reduce using rule 3 (ListSent -> ListSent Sent .)
+    WRITE           reduce using rule 3 (ListSent -> ListSent Sent .)
+    IDENT           reduce using rule 3 (ListSent -> ListSent Sent .)
+    IF              reduce using rule 3 (ListSent -> ListSent Sent .)
+    WHILE           reduce using rule 3 (ListSent -> ListSent Sent .)
+    FOR             reduce using rule 3 (ListSent -> ListSent Sent .)
+    LLAVE_CERR      reduce using rule 3 (ListSent -> ListSent Sent .)
+    $end            reduce using rule 3 (ListSent -> ListSent Sent .)
+
+
+
+state 33
+
+    (22) ParteSentIncF -> SentAsig2 . PAR_CERR LLAVE_AB
+
+    PAR_CERR        shift and go to state 63
+
+
+
+state 34
+
+    (12) SentAsig2 -> ParteDir . ASIG Expresion
+
+    ASIG            shift and go to state 64
+
+
+
+state 35
+
+    (19) SentFor -> ParteIniFor ParteSentIncF . LSentFor LLAVE_CERR
+    (23) LSentFor -> . ListSent
+    (2) ListSent -> . Sent
+    (3) ListSent -> . ListSent Sent
+    (4) Sent -> . SentAsig
+    (5) Sent -> . SentIf
+    (6) Sent -> . SentWhile
+    (7) Sent -> . SentFor
+    (8) Sent -> . READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+    (9) Sent -> . WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+    (11) SentAsig -> . ParteDir ASIG Expresion PUNTO_Y_COMA
+    (13) SentIf -> . ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+    (14) SentIf -> . ParteIf SentVIf2
+    (24) SentWhile -> . ParteWhile ParteSentW LLAVE_CERR
+    (19) SentFor -> . ParteIniFor ParteSentIncF LSentFor LLAVE_CERR
+    (10) ParteDir -> . IDENT
+    (15) ParteIf -> . IF PAR_AB Cond PAR_CERR LLAVE_AB
+    (25) ParteWhile -> . WhileParAb Cond PAR_CERR LLAVE_AB
+    (20) ParteIniFor -> . SeccionIni Cond PUNTO_Y_COMA
+    (26) WhileParAb -> . WHILE PAR_AB
+    (21) SeccionIni -> . FOR PAR_AB SentAsig2 PUNTO_Y_COMA
+
+    READ            shift and go to state 2
+    WRITE           shift and go to state 14
+    IDENT           shift and go to state 11
+    IF              shift and go to state 17
+    WHILE           shift and go to state 3
+    FOR             shift and go to state 12
+
+
+    SentFor                        shift and go to state 18
+    WhileParAb                     shift and go to state 1
+    SeccionIni                     shift and go to state 13
+    SentWhile                      shift and go to state 7
+    ParteIf                        shift and go to state 19
+    LSentFor                       shift and go to state 66
+    ParteWhile                     shift and go to state 16
+    ParteIniFor                    shift and go to state 8
+    SentIf                         shift and go to state 9
+    SentAsig                       shift and go to state 10
+    ListSent                       shift and go to state 65
+    Sent                           shift and go to state 6
+    ParteDir                       shift and go to state 15
+
+state 36
+
+    (21) SeccionIni -> FOR PAR_AB . SentAsig2 PUNTO_Y_COMA
+    (12) SentAsig2 -> . ParteDir ASIG Expresion
+    (10) ParteDir -> . IDENT
+
+    IDENT           shift and go to state 11
+
+
+    SentAsig2                      shift and go to state 67
+    ParteDir                       shift and go to state 34
+
+state 37
+
+    (20) ParteIniFor -> SeccionIni Cond . PUNTO_Y_COMA
+    (44) Cond -> Cond . YLOG Cond
+    (45) Cond -> Cond . OLOG Cond
+
+    PUNTO_Y_COMA    shift and go to state 68
+    YLOG            shift and go to state 61
+    OLOG            shift and go to state 59
+
+
+
+state 38
+
+    (9) Sent -> WRITE PAR_AB . Expresion PAR_CERR PUNTO_Y_COMA
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 69
+    Constante                      shift and go to state 22
+
+state 39
+
+    (11) SentAsig -> ParteDir ASIG . Expresion PUNTO_Y_COMA
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 70
+    Constante                      shift and go to state 22
+
+state 40
+
+    (24) SentWhile -> ParteWhile ParteSentW . LLAVE_CERR
+
+    LLAVE_CERR      shift and go to state 71
+
+
+
+state 41
+
+    (27) ParteSentW -> ListSent .
+    (3) ListSent -> ListSent . Sent
+    (4) Sent -> . SentAsig
+    (5) Sent -> . SentIf
+    (6) Sent -> . SentWhile
+    (7) Sent -> . SentFor
+    (8) Sent -> . READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+    (9) Sent -> . WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+    (11) SentAsig -> . ParteDir ASIG Expresion PUNTO_Y_COMA
+    (13) SentIf -> . ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+    (14) SentIf -> . ParteIf SentVIf2
+    (24) SentWhile -> . ParteWhile ParteSentW LLAVE_CERR
+    (19) SentFor -> . ParteIniFor ParteSentIncF LSentFor LLAVE_CERR
+    (10) ParteDir -> . IDENT
+    (15) ParteIf -> . IF PAR_AB Cond PAR_CERR LLAVE_AB
+    (25) ParteWhile -> . WhileParAb Cond PAR_CERR LLAVE_AB
+    (20) ParteIniFor -> . SeccionIni Cond PUNTO_Y_COMA
+    (26) WhileParAb -> . WHILE PAR_AB
+    (21) SeccionIni -> . FOR PAR_AB SentAsig2 PUNTO_Y_COMA
+
+    LLAVE_CERR      reduce using rule 27 (ParteSentW -> ListSent .)
+    READ            shift and go to state 2
+    WRITE           shift and go to state 14
+    IDENT           shift and go to state 11
+    IF              shift and go to state 17
+    WHILE           shift and go to state 3
+    FOR             shift and go to state 12
+
+
+    ParteIniFor                    shift and go to state 8
+    WhileParAb                     shift and go to state 1
+    SeccionIni                     shift and go to state 13
+    SentWhile                      shift and go to state 7
+    ParteWhile                     shift and go to state 16
+    SentFor                        shift and go to state 18
+    SentIf                         shift and go to state 9
+    SentAsig                       shift and go to state 10
+    ParteIf                        shift and go to state 19
+    Sent                           shift and go to state 32
+    ParteDir                       shift and go to state 15
+
+state 42
+
+    (15) ParteIf -> IF PAR_AB . Cond PAR_CERR LLAVE_AB
+    (37) Cond -> . Expresion MENOR_IGUAL Expresion
+    (38) Cond -> . Expresion MENOR_QUE Expresion
+    (39) Cond -> . Expresion MAYOR_IGUAL Expresion
+    (40) Cond -> . Expresion MAYOR_QUE Expresion
+    (41) Cond -> . Expresion IGUAL_IGUAL Expresion
+    (42) Cond -> . Expresion DISTINTO Expresion
+    (43) Cond -> . Expresion
+    (44) Cond -> . Cond YLOG Cond
+    (45) Cond -> . Cond OLOG Cond
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 27
+    Constante                      shift and go to state 22
+    Cond                           shift and go to state 72
+
+state 43
+
+    (14) SentIf -> ParteIf SentVIf2 .
+
+    READ            reduce using rule 14 (SentIf -> ParteIf SentVIf2 .)
+    WRITE           reduce using rule 14 (SentIf -> ParteIf SentVIf2 .)
+    IDENT           reduce using rule 14 (SentIf -> ParteIf SentVIf2 .)
+    IF              reduce using rule 14 (SentIf -> ParteIf SentVIf2 .)
+    WHILE           reduce using rule 14 (SentIf -> ParteIf SentVIf2 .)
+    FOR             reduce using rule 14 (SentIf -> ParteIf SentVIf2 .)
+    LLAVE_CERR      reduce using rule 14 (SentIf -> ParteIf SentVIf2 .)
+    $end            reduce using rule 14 (SentIf -> ParteIf SentVIf2 .)
+
+
+
+state 44
+
+    (13) SentIf -> ParteIf SentVIf . ELSE LLAVE_AB SentVElse LLAVE_CERR
+
+    ELSE            shift and go to state 73
+
+
+
+state 45
+
+    (16) SentVIf -> ListSent . LLAVE_CERR
+    (17) SentVIf2 -> ListSent . LLAVE_CERR
+    (3) ListSent -> ListSent . Sent
+    (4) Sent -> . SentAsig
+    (5) Sent -> . SentIf
+    (6) Sent -> . SentWhile
+    (7) Sent -> . SentFor
+    (8) Sent -> . READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+    (9) Sent -> . WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+    (11) SentAsig -> . ParteDir ASIG Expresion PUNTO_Y_COMA
+    (13) SentIf -> . ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+    (14) SentIf -> . ParteIf SentVIf2
+    (24) SentWhile -> . ParteWhile ParteSentW LLAVE_CERR
+    (19) SentFor -> . ParteIniFor ParteSentIncF LSentFor LLAVE_CERR
+    (10) ParteDir -> . IDENT
+    (15) ParteIf -> . IF PAR_AB Cond PAR_CERR LLAVE_AB
+    (25) ParteWhile -> . WhileParAb Cond PAR_CERR LLAVE_AB
+    (20) ParteIniFor -> . SeccionIni Cond PUNTO_Y_COMA
+    (26) WhileParAb -> . WHILE PAR_AB
+    (21) SeccionIni -> . FOR PAR_AB SentAsig2 PUNTO_Y_COMA
+
+    LLAVE_CERR      shift and go to state 74
+    READ            shift and go to state 2
+    WRITE           shift and go to state 14
+    IDENT           shift and go to state 11
+    IF              shift and go to state 17
+    WHILE           shift and go to state 3
+    FOR             shift and go to state 12
+
+
+    ParteIniFor                    shift and go to state 8
+    WhileParAb                     shift and go to state 1
+    SeccionIni                     shift and go to state 13
+    SentWhile                      shift and go to state 7
+    ParteWhile                     shift and go to state 16
+    SentFor                        shift and go to state 18
+    SentIf                         shift and go to state 9
+    SentAsig                       shift and go to state 10
+    ParteIf                        shift and go to state 19
+    Sent                           shift and go to state 32
+    ParteDir                       shift and go to state 15
+
+state 46
+
+    (36) Expresion -> RE Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    SU              reduce using rule 36 (Expresion -> RE Expresion .)
+    RE              reduce using rule 36 (Expresion -> RE Expresion .)
+    MULT            reduce using rule 36 (Expresion -> RE Expresion .)
+    DIV             reduce using rule 36 (Expresion -> RE Expresion .)
+    MOD             reduce using rule 36 (Expresion -> RE Expresion .)
+    MENOR_IGUAL     reduce using rule 36 (Expresion -> RE Expresion .)
+    MENOR_QUE       reduce using rule 36 (Expresion -> RE Expresion .)
+    MAYOR_IGUAL     reduce using rule 36 (Expresion -> RE Expresion .)
+    MAYOR_QUE       reduce using rule 36 (Expresion -> RE Expresion .)
+    IGUAL_IGUAL     reduce using rule 36 (Expresion -> RE Expresion .)
+    DISTINTO        reduce using rule 36 (Expresion -> RE Expresion .)
+    PAR_CERR        reduce using rule 36 (Expresion -> RE Expresion .)
+    YLOG            reduce using rule 36 (Expresion -> RE Expresion .)
+    OLOG            reduce using rule 36 (Expresion -> RE Expresion .)
+    PUNTO_Y_COMA    reduce using rule 36 (Expresion -> RE Expresion .)
+
+  ! SU              [ shift and go to state 49 ]
+  ! RE              [ shift and go to state 50 ]
+  ! MULT            [ shift and go to state 57 ]
+  ! DIV             [ shift and go to state 55 ]
+  ! MOD             [ shift and go to state 56 ]
+
+
+state 47
+
+    (35) Expresion -> PAR_AB Expresion . PAR_CERR
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    PAR_CERR        shift and go to state 75
+    SU              shift and go to state 49
+    RE              shift and go to state 50
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+
+
+state 48
+
+    (42) Cond -> Expresion DISTINTO . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 76
+    Constante                      shift and go to state 22
+
+state 49
+
+    (28) Expresion -> Expresion SU . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 77
+    Constante                      shift and go to state 22
+
+state 50
+
+    (29) Expresion -> Expresion RE . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 78
+    Constante                      shift and go to state 22
+
+state 51
+
+    (38) Cond -> Expresion MENOR_QUE . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 79
+    Constante                      shift and go to state 22
+
+state 52
+
+    (41) Cond -> Expresion IGUAL_IGUAL . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 80
+    Constante                      shift and go to state 22
+
+state 53
+
+    (40) Cond -> Expresion MAYOR_QUE . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 81
+    Constante                      shift and go to state 22
+
+state 54
+
+    (39) Cond -> Expresion MAYOR_IGUAL . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 82
+    Constante                      shift and go to state 22
+
+state 55
+
+    (31) Expresion -> Expresion DIV . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 83
+    Constante                      shift and go to state 22
+
+state 56
+
+    (32) Expresion -> Expresion MOD . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 84
+    Constante                      shift and go to state 22
+
+state 57
+
+    (30) Expresion -> Expresion MULT . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 85
+    Constante                      shift and go to state 22
+
+state 58
+
+    (37) Cond -> Expresion MENOR_IGUAL . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 86
+    Constante                      shift and go to state 22
+
+state 59
+
+    (45) Cond -> Cond OLOG . Cond
+    (37) Cond -> . Expresion MENOR_IGUAL Expresion
+    (38) Cond -> . Expresion MENOR_QUE Expresion
+    (39) Cond -> . Expresion MAYOR_IGUAL Expresion
+    (40) Cond -> . Expresion MAYOR_QUE Expresion
+    (41) Cond -> . Expresion IGUAL_IGUAL Expresion
+    (42) Cond -> . Expresion DISTINTO Expresion
+    (43) Cond -> . Expresion
+    (44) Cond -> . Cond YLOG Cond
+    (45) Cond -> . Cond OLOG Cond
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 27
+    Constante                      shift and go to state 22
+    Cond                           shift and go to state 87
+
+state 60
+
+    (25) ParteWhile -> WhileParAb Cond PAR_CERR . LLAVE_AB
+
+    LLAVE_AB        shift and go to state 88
+
+
+
+state 61
+
+    (44) Cond -> Cond YLOG . Cond
+    (37) Cond -> . Expresion MENOR_IGUAL Expresion
+    (38) Cond -> . Expresion MENOR_QUE Expresion
+    (39) Cond -> . Expresion MAYOR_IGUAL Expresion
+    (40) Cond -> . Expresion MAYOR_QUE Expresion
+    (41) Cond -> . Expresion IGUAL_IGUAL Expresion
+    (42) Cond -> . Expresion DISTINTO Expresion
+    (43) Cond -> . Expresion
+    (44) Cond -> . Cond YLOG Cond
+    (45) Cond -> . Cond OLOG Cond
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 27
+    Constante                      shift and go to state 22
+    Cond                           shift and go to state 89
+
+state 62
+
+    (8) Sent -> READ PAR_AB IDENT . PAR_CERR PUNTO_Y_COMA
+
+    PAR_CERR        shift and go to state 90
+
+
+
+state 63
+
+    (22) ParteSentIncF -> SentAsig2 PAR_CERR . LLAVE_AB
+
+    LLAVE_AB        shift and go to state 91
+
+
+
+state 64
+
+    (12) SentAsig2 -> ParteDir ASIG . Expresion
+    (28) Expresion -> . Expresion SU Expresion
+    (29) Expresion -> . Expresion RE Expresion
+    (30) Expresion -> . Expresion MULT Expresion
+    (31) Expresion -> . Expresion DIV Expresion
+    (32) Expresion -> . Expresion MOD Expresion
+    (33) Expresion -> . IDENT
+    (34) Expresion -> . Constante
+    (35) Expresion -> . PAR_AB Expresion PAR_CERR
+    (36) Expresion -> . RE Expresion
+    (46) Constante -> . TBOOLEAN
+    (47) Constante -> . FBOOLEAN
+    (48) Constante -> . ENTERO
+    (49) Constante -> . REAL
+
+    IDENT           shift and go to state 28
+    PAR_AB          shift and go to state 25
+    RE              shift and go to state 24
+    TBOOLEAN        shift and go to state 23
+    FBOOLEAN        shift and go to state 21
+    ENTERO          shift and go to state 26
+    REAL            shift and go to state 20
+
+
+    Expresion                      shift and go to state 92
+    Constante                      shift and go to state 22
+
+state 65
+
+    (23) LSentFor -> ListSent .
+    (3) ListSent -> ListSent . Sent
+    (4) Sent -> . SentAsig
+    (5) Sent -> . SentIf
+    (6) Sent -> . SentWhile
+    (7) Sent -> . SentFor
+    (8) Sent -> . READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+    (9) Sent -> . WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+    (11) SentAsig -> . ParteDir ASIG Expresion PUNTO_Y_COMA
+    (13) SentIf -> . ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+    (14) SentIf -> . ParteIf SentVIf2
+    (24) SentWhile -> . ParteWhile ParteSentW LLAVE_CERR
+    (19) SentFor -> . ParteIniFor ParteSentIncF LSentFor LLAVE_CERR
+    (10) ParteDir -> . IDENT
+    (15) ParteIf -> . IF PAR_AB Cond PAR_CERR LLAVE_AB
+    (25) ParteWhile -> . WhileParAb Cond PAR_CERR LLAVE_AB
+    (20) ParteIniFor -> . SeccionIni Cond PUNTO_Y_COMA
+    (26) WhileParAb -> . WHILE PAR_AB
+    (21) SeccionIni -> . FOR PAR_AB SentAsig2 PUNTO_Y_COMA
+
+    LLAVE_CERR      reduce using rule 23 (LSentFor -> ListSent .)
+    READ            shift and go to state 2
+    WRITE           shift and go to state 14
+    IDENT           shift and go to state 11
+    IF              shift and go to state 17
+    WHILE           shift and go to state 3
+    FOR             shift and go to state 12
+
+
+    ParteIniFor                    shift and go to state 8
+    WhileParAb                     shift and go to state 1
+    SeccionIni                     shift and go to state 13
+    SentWhile                      shift and go to state 7
+    ParteWhile                     shift and go to state 16
+    SentFor                        shift and go to state 18
+    SentIf                         shift and go to state 9
+    SentAsig                       shift and go to state 10
+    ParteIf                        shift and go to state 19
+    Sent                           shift and go to state 32
+    ParteDir                       shift and go to state 15
+
+state 66
+
+    (19) SentFor -> ParteIniFor ParteSentIncF LSentFor . LLAVE_CERR
+
+    LLAVE_CERR      shift and go to state 93
+
+
+
+state 67
+
+    (21) SeccionIni -> FOR PAR_AB SentAsig2 . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 94
+
+
+
+state 68
+
+    (20) ParteIniFor -> SeccionIni Cond PUNTO_Y_COMA .
+
+    IDENT           reduce using rule 20 (ParteIniFor -> SeccionIni Cond PUNTO_Y_COMA .)
+
+
+
+state 69
+
+    (9) Sent -> WRITE PAR_AB Expresion . PAR_CERR PUNTO_Y_COMA
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    PAR_CERR        shift and go to state 95
+    SU              shift and go to state 49
+    RE              shift and go to state 50
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+
+
+state 70
+
+    (11) SentAsig -> ParteDir ASIG Expresion . PUNTO_Y_COMA
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    PUNTO_Y_COMA    shift and go to state 96
+    SU              shift and go to state 49
+    RE              shift and go to state 50
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+
+
+state 71
+
+    (24) SentWhile -> ParteWhile ParteSentW LLAVE_CERR .
+
+    LLAVE_CERR      reduce using rule 24 (SentWhile -> ParteWhile ParteSentW LLAVE_CERR .)
+    READ            reduce using rule 24 (SentWhile -> ParteWhile ParteSentW LLAVE_CERR .)
+    WRITE           reduce using rule 24 (SentWhile -> ParteWhile ParteSentW LLAVE_CERR .)
+    IDENT           reduce using rule 24 (SentWhile -> ParteWhile ParteSentW LLAVE_CERR .)
+    IF              reduce using rule 24 (SentWhile -> ParteWhile ParteSentW LLAVE_CERR .)
+    WHILE           reduce using rule 24 (SentWhile -> ParteWhile ParteSentW LLAVE_CERR .)
+    FOR             reduce using rule 24 (SentWhile -> ParteWhile ParteSentW LLAVE_CERR .)
+    $end            reduce using rule 24 (SentWhile -> ParteWhile ParteSentW LLAVE_CERR .)
+
+
+
+state 72
+
+    (15) ParteIf -> IF PAR_AB Cond . PAR_CERR LLAVE_AB
+    (44) Cond -> Cond . YLOG Cond
+    (45) Cond -> Cond . OLOG Cond
+
+    PAR_CERR        shift and go to state 97
+    YLOG            shift and go to state 61
+    OLOG            shift and go to state 59
+
+
+
+state 73
+
+    (13) SentIf -> ParteIf SentVIf ELSE . LLAVE_AB SentVElse LLAVE_CERR
+
+    LLAVE_AB        shift and go to state 98
+
+
+
+state 74
+
+    (16) SentVIf -> ListSent LLAVE_CERR .
+    (17) SentVIf2 -> ListSent LLAVE_CERR .
+
+    ELSE            reduce using rule 16 (SentVIf -> ListSent LLAVE_CERR .)
+    READ            reduce using rule 17 (SentVIf2 -> ListSent LLAVE_CERR .)
+    WRITE           reduce using rule 17 (SentVIf2 -> ListSent LLAVE_CERR .)
+    IDENT           reduce using rule 17 (SentVIf2 -> ListSent LLAVE_CERR .)
+    IF              reduce using rule 17 (SentVIf2 -> ListSent LLAVE_CERR .)
+    WHILE           reduce using rule 17 (SentVIf2 -> ListSent LLAVE_CERR .)
+    FOR             reduce using rule 17 (SentVIf2 -> ListSent LLAVE_CERR .)
+    $end            reduce using rule 17 (SentVIf2 -> ListSent LLAVE_CERR .)
+    LLAVE_CERR      reduce using rule 17 (SentVIf2 -> ListSent LLAVE_CERR .)
+
+
+
+state 75
+
+    (35) Expresion -> PAR_AB Expresion PAR_CERR .
+
+    SU              reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    RE              reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    MULT            reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    DIV             reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    MOD             reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    MENOR_IGUAL     reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    MENOR_QUE       reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    MAYOR_IGUAL     reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    MAYOR_QUE       reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    IGUAL_IGUAL     reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    DISTINTO        reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    PAR_CERR        reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    YLOG            reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    OLOG            reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+    PUNTO_Y_COMA    reduce using rule 35 (Expresion -> PAR_AB Expresion PAR_CERR .)
+
+
+
+state 76
+
+    (42) Cond -> Expresion DISTINTO Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    PAR_CERR        reduce using rule 42 (Cond -> Expresion DISTINTO Expresion .)
+    YLOG            reduce using rule 42 (Cond -> Expresion DISTINTO Expresion .)
+    OLOG            reduce using rule 42 (Cond -> Expresion DISTINTO Expresion .)
+    PUNTO_Y_COMA    reduce using rule 42 (Cond -> Expresion DISTINTO Expresion .)
+    SU              shift and go to state 49
+    RE              shift and go to state 50
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+
+
+state 77
+
+    (28) Expresion -> Expresion SU Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    SU              reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    RE              reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    MENOR_IGUAL     reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    MENOR_QUE       reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    MAYOR_IGUAL     reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    MAYOR_QUE       reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    IGUAL_IGUAL     reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    DISTINTO        reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    PAR_CERR        reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    YLOG            reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    OLOG            reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    PUNTO_Y_COMA    reduce using rule 28 (Expresion -> Expresion SU Expresion .)
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+  ! MULT            [ reduce using rule 28 (Expresion -> Expresion SU Expresion .) ]
+  ! DIV             [ reduce using rule 28 (Expresion -> Expresion SU Expresion .) ]
+  ! MOD             [ reduce using rule 28 (Expresion -> Expresion SU Expresion .) ]
+  ! SU              [ shift and go to state 49 ]
+  ! RE              [ shift and go to state 50 ]
+
+
+state 78
+
+    (29) Expresion -> Expresion RE Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    SU              reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    RE              reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    MENOR_IGUAL     reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    MENOR_QUE       reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    MAYOR_IGUAL     reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    MAYOR_QUE       reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    IGUAL_IGUAL     reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    DISTINTO        reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    PAR_CERR        reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    YLOG            reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    OLOG            reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    PUNTO_Y_COMA    reduce using rule 29 (Expresion -> Expresion RE Expresion .)
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+  ! MULT            [ reduce using rule 29 (Expresion -> Expresion RE Expresion .) ]
+  ! DIV             [ reduce using rule 29 (Expresion -> Expresion RE Expresion .) ]
+  ! MOD             [ reduce using rule 29 (Expresion -> Expresion RE Expresion .) ]
+  ! SU              [ shift and go to state 49 ]
+  ! RE              [ shift and go to state 50 ]
+
+
+state 79
+
+    (38) Cond -> Expresion MENOR_QUE Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    PAR_CERR        reduce using rule 38 (Cond -> Expresion MENOR_QUE Expresion .)
+    YLOG            reduce using rule 38 (Cond -> Expresion MENOR_QUE Expresion .)
+    OLOG            reduce using rule 38 (Cond -> Expresion MENOR_QUE Expresion .)
+    PUNTO_Y_COMA    reduce using rule 38 (Cond -> Expresion MENOR_QUE Expresion .)
+    SU              shift and go to state 49
+    RE              shift and go to state 50
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+
+
+state 80
+
+    (41) Cond -> Expresion IGUAL_IGUAL Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    PAR_CERR        reduce using rule 41 (Cond -> Expresion IGUAL_IGUAL Expresion .)
+    YLOG            reduce using rule 41 (Cond -> Expresion IGUAL_IGUAL Expresion .)
+    OLOG            reduce using rule 41 (Cond -> Expresion IGUAL_IGUAL Expresion .)
+    PUNTO_Y_COMA    reduce using rule 41 (Cond -> Expresion IGUAL_IGUAL Expresion .)
+    SU              shift and go to state 49
+    RE              shift and go to state 50
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+
+
+state 81
+
+    (40) Cond -> Expresion MAYOR_QUE Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    PAR_CERR        reduce using rule 40 (Cond -> Expresion MAYOR_QUE Expresion .)
+    YLOG            reduce using rule 40 (Cond -> Expresion MAYOR_QUE Expresion .)
+    OLOG            reduce using rule 40 (Cond -> Expresion MAYOR_QUE Expresion .)
+    PUNTO_Y_COMA    reduce using rule 40 (Cond -> Expresion MAYOR_QUE Expresion .)
+    SU              shift and go to state 49
+    RE              shift and go to state 50
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+
+
+state 82
+
+    (39) Cond -> Expresion MAYOR_IGUAL Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    PAR_CERR        reduce using rule 39 (Cond -> Expresion MAYOR_IGUAL Expresion .)
+    YLOG            reduce using rule 39 (Cond -> Expresion MAYOR_IGUAL Expresion .)
+    OLOG            reduce using rule 39 (Cond -> Expresion MAYOR_IGUAL Expresion .)
+    PUNTO_Y_COMA    reduce using rule 39 (Cond -> Expresion MAYOR_IGUAL Expresion .)
+    SU              shift and go to state 49
+    RE              shift and go to state 50
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+
+
+state 83
+
+    (31) Expresion -> Expresion DIV Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    SU              reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    RE              reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    MULT            reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    DIV             reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    MOD             reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    MENOR_IGUAL     reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    MENOR_QUE       reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    MAYOR_IGUAL     reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    MAYOR_QUE       reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    IGUAL_IGUAL     reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    DISTINTO        reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    PAR_CERR        reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    YLOG            reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    OLOG            reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+    PUNTO_Y_COMA    reduce using rule 31 (Expresion -> Expresion DIV Expresion .)
+
+  ! SU              [ shift and go to state 49 ]
+  ! RE              [ shift and go to state 50 ]
+  ! MULT            [ shift and go to state 57 ]
+  ! DIV             [ shift and go to state 55 ]
+  ! MOD             [ shift and go to state 56 ]
+
+
+state 84
+
+    (32) Expresion -> Expresion MOD Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    SU              reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    RE              reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    MULT            reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    DIV             reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    MOD             reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    MENOR_IGUAL     reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    MENOR_QUE       reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    MAYOR_IGUAL     reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    MAYOR_QUE       reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    IGUAL_IGUAL     reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    DISTINTO        reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    PAR_CERR        reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    YLOG            reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    OLOG            reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+    PUNTO_Y_COMA    reduce using rule 32 (Expresion -> Expresion MOD Expresion .)
+
+  ! SU              [ shift and go to state 49 ]
+  ! RE              [ shift and go to state 50 ]
+  ! MULT            [ shift and go to state 57 ]
+  ! DIV             [ shift and go to state 55 ]
+  ! MOD             [ shift and go to state 56 ]
+
+
+state 85
+
+    (30) Expresion -> Expresion MULT Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    SU              reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    RE              reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    MULT            reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    DIV             reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    MOD             reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    MENOR_IGUAL     reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    MENOR_QUE       reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    MAYOR_IGUAL     reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    MAYOR_QUE       reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    IGUAL_IGUAL     reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    DISTINTO        reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    PAR_CERR        reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    YLOG            reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    OLOG            reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+    PUNTO_Y_COMA    reduce using rule 30 (Expresion -> Expresion MULT Expresion .)
+
+  ! SU              [ shift and go to state 49 ]
+  ! RE              [ shift and go to state 50 ]
+  ! MULT            [ shift and go to state 57 ]
+  ! DIV             [ shift and go to state 55 ]
+  ! MOD             [ shift and go to state 56 ]
+
+
+state 86
+
+    (37) Cond -> Expresion MENOR_IGUAL Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    PAR_CERR        reduce using rule 37 (Cond -> Expresion MENOR_IGUAL Expresion .)
+    YLOG            reduce using rule 37 (Cond -> Expresion MENOR_IGUAL Expresion .)
+    OLOG            reduce using rule 37 (Cond -> Expresion MENOR_IGUAL Expresion .)
+    PUNTO_Y_COMA    reduce using rule 37 (Cond -> Expresion MENOR_IGUAL Expresion .)
+    SU              shift and go to state 49
+    RE              shift and go to state 50
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+
+
+state 87
+
+    (45) Cond -> Cond OLOG Cond .
+    (44) Cond -> Cond . YLOG Cond
+    (45) Cond -> Cond . OLOG Cond
+
+  ! shift/reduce conflict for YLOG resolved as shift.
+  ! shift/reduce conflict for OLOG resolved as shift.
+    PAR_CERR        reduce using rule 45 (Cond -> Cond OLOG Cond .)
+    PUNTO_Y_COMA    reduce using rule 45 (Cond -> Cond OLOG Cond .)
+    YLOG            shift and go to state 61
+    OLOG            shift and go to state 59
+
+  ! YLOG            [ reduce using rule 45 (Cond -> Cond OLOG Cond .) ]
+  ! OLOG            [ reduce using rule 45 (Cond -> Cond OLOG Cond .) ]
+
+
+state 88
+
+    (25) ParteWhile -> WhileParAb Cond PAR_CERR LLAVE_AB .
+
+    READ            reduce using rule 25 (ParteWhile -> WhileParAb Cond PAR_CERR LLAVE_AB .)
+    WRITE           reduce using rule 25 (ParteWhile -> WhileParAb Cond PAR_CERR LLAVE_AB .)
+    IDENT           reduce using rule 25 (ParteWhile -> WhileParAb Cond PAR_CERR LLAVE_AB .)
+    IF              reduce using rule 25 (ParteWhile -> WhileParAb Cond PAR_CERR LLAVE_AB .)
+    WHILE           reduce using rule 25 (ParteWhile -> WhileParAb Cond PAR_CERR LLAVE_AB .)
+    FOR             reduce using rule 25 (ParteWhile -> WhileParAb Cond PAR_CERR LLAVE_AB .)
+
+
+
+state 89
+
+    (44) Cond -> Cond YLOG Cond .
+    (44) Cond -> Cond . YLOG Cond
+    (45) Cond -> Cond . OLOG Cond
+
+  ! shift/reduce conflict for YLOG resolved as shift.
+  ! shift/reduce conflict for OLOG resolved as shift.
+    PAR_CERR        reduce using rule 44 (Cond -> Cond YLOG Cond .)
+    PUNTO_Y_COMA    reduce using rule 44 (Cond -> Cond YLOG Cond .)
+    YLOG            shift and go to state 61
+    OLOG            shift and go to state 59
+
+  ! YLOG            [ reduce using rule 44 (Cond -> Cond YLOG Cond .) ]
+  ! OLOG            [ reduce using rule 44 (Cond -> Cond YLOG Cond .) ]
+
+
+state 90
+
+    (8) Sent -> READ PAR_AB IDENT PAR_CERR . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 99
+
+
+
+state 91
+
+    (22) ParteSentIncF -> SentAsig2 PAR_CERR LLAVE_AB .
+
+    READ            reduce using rule 22 (ParteSentIncF -> SentAsig2 PAR_CERR LLAVE_AB .)
+    WRITE           reduce using rule 22 (ParteSentIncF -> SentAsig2 PAR_CERR LLAVE_AB .)
+    IDENT           reduce using rule 22 (ParteSentIncF -> SentAsig2 PAR_CERR LLAVE_AB .)
+    IF              reduce using rule 22 (ParteSentIncF -> SentAsig2 PAR_CERR LLAVE_AB .)
+    WHILE           reduce using rule 22 (ParteSentIncF -> SentAsig2 PAR_CERR LLAVE_AB .)
+    FOR             reduce using rule 22 (ParteSentIncF -> SentAsig2 PAR_CERR LLAVE_AB .)
+
+
+
+state 92
+
+    (12) SentAsig2 -> ParteDir ASIG Expresion .
+    (28) Expresion -> Expresion . SU Expresion
+    (29) Expresion -> Expresion . RE Expresion
+    (30) Expresion -> Expresion . MULT Expresion
+    (31) Expresion -> Expresion . DIV Expresion
+    (32) Expresion -> Expresion . MOD Expresion
+
+    PUNTO_Y_COMA    reduce using rule 12 (SentAsig2 -> ParteDir ASIG Expresion .)
+    PAR_CERR        reduce using rule 12 (SentAsig2 -> ParteDir ASIG Expresion .)
+    SU              shift and go to state 49
+    RE              shift and go to state 50
+    MULT            shift and go to state 57
+    DIV             shift and go to state 55
+    MOD             shift and go to state 56
+
+
+
+state 93
+
+    (19) SentFor -> ParteIniFor ParteSentIncF LSentFor LLAVE_CERR .
+
+    LLAVE_CERR      reduce using rule 19 (SentFor -> ParteIniFor ParteSentIncF LSentFor LLAVE_CERR .)
+    READ            reduce using rule 19 (SentFor -> ParteIniFor ParteSentIncF LSentFor LLAVE_CERR .)
+    WRITE           reduce using rule 19 (SentFor -> ParteIniFor ParteSentIncF LSentFor LLAVE_CERR .)
+    IDENT           reduce using rule 19 (SentFor -> ParteIniFor ParteSentIncF LSentFor LLAVE_CERR .)
+    IF              reduce using rule 19 (SentFor -> ParteIniFor ParteSentIncF LSentFor LLAVE_CERR .)
+    WHILE           reduce using rule 19 (SentFor -> ParteIniFor ParteSentIncF LSentFor LLAVE_CERR .)
+    FOR             reduce using rule 19 (SentFor -> ParteIniFor ParteSentIncF LSentFor LLAVE_CERR .)
+    $end            reduce using rule 19 (SentFor -> ParteIniFor ParteSentIncF LSentFor LLAVE_CERR .)
+
+
+
+state 94
+
+    (21) SeccionIni -> FOR PAR_AB SentAsig2 PUNTO_Y_COMA .
+
+    IDENT           reduce using rule 21 (SeccionIni -> FOR PAR_AB SentAsig2 PUNTO_Y_COMA .)
+    PAR_AB          reduce using rule 21 (SeccionIni -> FOR PAR_AB SentAsig2 PUNTO_Y_COMA .)
+    RE              reduce using rule 21 (SeccionIni -> FOR PAR_AB SentAsig2 PUNTO_Y_COMA .)
+    TBOOLEAN        reduce using rule 21 (SeccionIni -> FOR PAR_AB SentAsig2 PUNTO_Y_COMA .)
+    FBOOLEAN        reduce using rule 21 (SeccionIni -> FOR PAR_AB SentAsig2 PUNTO_Y_COMA .)
+    ENTERO          reduce using rule 21 (SeccionIni -> FOR PAR_AB SentAsig2 PUNTO_Y_COMA .)
+    REAL            reduce using rule 21 (SeccionIni -> FOR PAR_AB SentAsig2 PUNTO_Y_COMA .)
+
+
+
+state 95
+
+    (9) Sent -> WRITE PAR_AB Expresion PAR_CERR . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 100
+
+
+
+state 96
+
+    (11) SentAsig -> ParteDir ASIG Expresion PUNTO_Y_COMA .
+
+    READ            reduce using rule 11 (SentAsig -> ParteDir ASIG Expresion PUNTO_Y_COMA .)
+    WRITE           reduce using rule 11 (SentAsig -> ParteDir ASIG Expresion PUNTO_Y_COMA .)
+    IDENT           reduce using rule 11 (SentAsig -> ParteDir ASIG Expresion PUNTO_Y_COMA .)
+    IF              reduce using rule 11 (SentAsig -> ParteDir ASIG Expresion PUNTO_Y_COMA .)
+    WHILE           reduce using rule 11 (SentAsig -> ParteDir ASIG Expresion PUNTO_Y_COMA .)
+    FOR             reduce using rule 11 (SentAsig -> ParteDir ASIG Expresion PUNTO_Y_COMA .)
+    LLAVE_CERR      reduce using rule 11 (SentAsig -> ParteDir ASIG Expresion PUNTO_Y_COMA .)
+    $end            reduce using rule 11 (SentAsig -> ParteDir ASIG Expresion PUNTO_Y_COMA .)
+
+
+
+state 97
+
+    (15) ParteIf -> IF PAR_AB Cond PAR_CERR . LLAVE_AB
+
+    LLAVE_AB        shift and go to state 101
+
+
+
+state 98
+
+    (13) SentIf -> ParteIf SentVIf ELSE LLAVE_AB . SentVElse LLAVE_CERR
+    (18) SentVElse -> . ListSent
+    (2) ListSent -> . Sent
+    (3) ListSent -> . ListSent Sent
+    (4) Sent -> . SentAsig
+    (5) Sent -> . SentIf
+    (6) Sent -> . SentWhile
+    (7) Sent -> . SentFor
+    (8) Sent -> . READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+    (9) Sent -> . WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+    (11) SentAsig -> . ParteDir ASIG Expresion PUNTO_Y_COMA
+    (13) SentIf -> . ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+    (14) SentIf -> . ParteIf SentVIf2
+    (24) SentWhile -> . ParteWhile ParteSentW LLAVE_CERR
+    (19) SentFor -> . ParteIniFor ParteSentIncF LSentFor LLAVE_CERR
+    (10) ParteDir -> . IDENT
+    (15) ParteIf -> . IF PAR_AB Cond PAR_CERR LLAVE_AB
+    (25) ParteWhile -> . WhileParAb Cond PAR_CERR LLAVE_AB
+    (20) ParteIniFor -> . SeccionIni Cond PUNTO_Y_COMA
+    (26) WhileParAb -> . WHILE PAR_AB
+    (21) SeccionIni -> . FOR PAR_AB SentAsig2 PUNTO_Y_COMA
+
+    READ            shift and go to state 2
+    WRITE           shift and go to state 14
+    IDENT           shift and go to state 11
+    IF              shift and go to state 17
+    WHILE           shift and go to state 3
+    FOR             shift and go to state 12
+
+
+    ParteIniFor                    shift and go to state 8
+    WhileParAb                     shift and go to state 1
+    SeccionIni                     shift and go to state 13
+    SentWhile                      shift and go to state 7
+    ParteWhile                     shift and go to state 16
+    SentFor                        shift and go to state 18
+    SentIf                         shift and go to state 9
+    SentAsig                       shift and go to state 10
+    ParteIf                        shift and go to state 19
+    SentVElse                      shift and go to state 103
+    ListSent                       shift and go to state 102
+    Sent                           shift and go to state 6
+    ParteDir                       shift and go to state 15
+
+state 99
+
+    (8) Sent -> READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA .
+
+    READ            reduce using rule 8 (Sent -> READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA .)
+    WRITE           reduce using rule 8 (Sent -> READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA .)
+    IDENT           reduce using rule 8 (Sent -> READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA .)
+    IF              reduce using rule 8 (Sent -> READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA .)
+    WHILE           reduce using rule 8 (Sent -> READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA .)
+    FOR             reduce using rule 8 (Sent -> READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA .)
+    LLAVE_CERR      reduce using rule 8 (Sent -> READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA .)
+    $end            reduce using rule 8 (Sent -> READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA .)
+
+
+
+state 100
+
+    (9) Sent -> WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA .
+
+    READ            reduce using rule 9 (Sent -> WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA .)
+    WRITE           reduce using rule 9 (Sent -> WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA .)
+    IDENT           reduce using rule 9 (Sent -> WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA .)
+    IF              reduce using rule 9 (Sent -> WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA .)
+    WHILE           reduce using rule 9 (Sent -> WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA .)
+    FOR             reduce using rule 9 (Sent -> WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA .)
+    LLAVE_CERR      reduce using rule 9 (Sent -> WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA .)
+    $end            reduce using rule 9 (Sent -> WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA .)
+
+
+
+state 101
+
+    (15) ParteIf -> IF PAR_AB Cond PAR_CERR LLAVE_AB .
+
+    READ            reduce using rule 15 (ParteIf -> IF PAR_AB Cond PAR_CERR LLAVE_AB .)
+    WRITE           reduce using rule 15 (ParteIf -> IF PAR_AB Cond PAR_CERR LLAVE_AB .)
+    IDENT           reduce using rule 15 (ParteIf -> IF PAR_AB Cond PAR_CERR LLAVE_AB .)
+    IF              reduce using rule 15 (ParteIf -> IF PAR_AB Cond PAR_CERR LLAVE_AB .)
+    WHILE           reduce using rule 15 (ParteIf -> IF PAR_AB Cond PAR_CERR LLAVE_AB .)
+    FOR             reduce using rule 15 (ParteIf -> IF PAR_AB Cond PAR_CERR LLAVE_AB .)
+
+
+
+state 102
+
+    (18) SentVElse -> ListSent .
+    (3) ListSent -> ListSent . Sent
+    (4) Sent -> . SentAsig
+    (5) Sent -> . SentIf
+    (6) Sent -> . SentWhile
+    (7) Sent -> . SentFor
+    (8) Sent -> . READ PAR_AB IDENT PAR_CERR PUNTO_Y_COMA
+    (9) Sent -> . WRITE PAR_AB Expresion PAR_CERR PUNTO_Y_COMA
+    (11) SentAsig -> . ParteDir ASIG Expresion PUNTO_Y_COMA
+    (13) SentIf -> . ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR
+    (14) SentIf -> . ParteIf SentVIf2
+    (24) SentWhile -> . ParteWhile ParteSentW LLAVE_CERR
+    (19) SentFor -> . ParteIniFor ParteSentIncF LSentFor LLAVE_CERR
+    (10) ParteDir -> . IDENT
+    (15) ParteIf -> . IF PAR_AB Cond PAR_CERR LLAVE_AB
+    (25) ParteWhile -> . WhileParAb Cond PAR_CERR LLAVE_AB
+    (20) ParteIniFor -> . SeccionIni Cond PUNTO_Y_COMA
+    (26) WhileParAb -> . WHILE PAR_AB
+    (21) SeccionIni -> . FOR PAR_AB SentAsig2 PUNTO_Y_COMA
+
+    LLAVE_CERR      reduce using rule 18 (SentVElse -> ListSent .)
+    READ            shift and go to state 2
+    WRITE           shift and go to state 14
+    IDENT           shift and go to state 11
+    IF              shift and go to state 17
+    WHILE           shift and go to state 3
+    FOR             shift and go to state 12
+
+
+    ParteIniFor                    shift and go to state 8
+    WhileParAb                     shift and go to state 1
+    SeccionIni                     shift and go to state 13
+    SentWhile                      shift and go to state 7
+    ParteWhile                     shift and go to state 16
+    SentFor                        shift and go to state 18
+    SentIf                         shift and go to state 9
+    SentAsig                       shift and go to state 10
+    ParteIf                        shift and go to state 19
+    Sent                           shift and go to state 32
+    ParteDir                       shift and go to state 15
+
+state 103
+
+    (13) SentIf -> ParteIf SentVIf ELSE LLAVE_AB SentVElse . LLAVE_CERR
+
+    LLAVE_CERR      shift and go to state 104
+
+
+
+state 104
+
+    (13) SentIf -> ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR .
+
+    READ            reduce using rule 13 (SentIf -> ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR .)
+    WRITE           reduce using rule 13 (SentIf -> ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR .)
+    IDENT           reduce using rule 13 (SentIf -> ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR .)
+    IF              reduce using rule 13 (SentIf -> ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR .)
+    WHILE           reduce using rule 13 (SentIf -> ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR .)
+    FOR             reduce using rule 13 (SentIf -> ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR .)
+    LLAVE_CERR      reduce using rule 13 (SentIf -> ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR .)
+    $end            reduce using rule 13 (SentIf -> ParteIf SentVIf ELSE LLAVE_AB SentVElse LLAVE_CERR .)
+
+
